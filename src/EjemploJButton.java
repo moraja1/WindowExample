@@ -10,12 +10,19 @@ public class EjemploJButton {
         JMenu menu = new JMenu("Options");
         JMenuItem menuItem1 = new JMenuItem("Example1");
         JMenuItem menuItem2 = new JMenuItem("Example2");
+        DefaultListModel<String> l = new DefaultListModel<>();
+        l.addElement("First Item");
+        l.addElement("Second element");
+        JList<String> b = new JList<>(l);
+        b.setForeground(Color.WHITE);
+        b.setBackground(Color.BLACK);
+        b.setBounds(new Rectangle(75, 75));
         menu.add(menuItem1);
         menu.add(menuItem2);
         menuBar.add(menu);
         BorderLayout bl = new BorderLayout();
         JScrollBar d = new JScrollBar();
-        JTextField b = new JTextField("JTextField utilizando swing");
+        //JTextField b = new JTextField("JTextField utilizando swing");
         a.setJMenuBar(menuBar);
         a.setLayout(bl);
         p.add(b);
@@ -24,7 +31,6 @@ public class EjemploJButton {
         a.add(p, BorderLayout.CENTER);
         a.add(c, BorderLayout.SOUTH);
         a.add(d, BorderLayout.EAST);
-
         c.setBounds(new Rectangle(100, 25));
         a.setSize(300,300);
         a.setVisible(true);
